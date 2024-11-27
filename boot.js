@@ -11,6 +11,7 @@ function boot() {
     thread.createThread("PlatformRecycleTempAddEmptyPallet", "schedulerModbus");
     //创建线程：更新巷道是否允许出库
     thread.createThread("ChangeChannelIoReady", "schedulerChangeChannelIoReady");
+    thread.createThread("t1", "t1");
     //创建实体拦截器：【物料入库】创建前根据用户 ID 判断起点库位
     entityExt.extBeforeCreating("InboundOrder", "decideFromBinByUserBeforeCreating");
     //创建实体拦截器：【物料出库】创建前寻找库存并修改单头单行，找不到可出的前端报错
